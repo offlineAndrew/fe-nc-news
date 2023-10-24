@@ -7,3 +7,11 @@ export const getArticles = () => {
       return res.data.articles;
     });
 };
+
+export const getArticle = (article_id) => {
+    return axios
+      .get(`https://andrii-nc-news.onrender.com/api/articles/${article_id}`)
+      .then((res) => {
+            return res.data.article;
+        });
+}
