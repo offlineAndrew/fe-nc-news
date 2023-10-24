@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { getArticles } from "../utils/api";
+import { Link } from 'react-router-dom';
+
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -29,19 +30,21 @@ const Articles = () => {
             article_img_url,
             created_at,
             comment_count,
-
           }) => (
             <li key={article_id}>
-              <h3>{title}</h3>
+              <Link to={`/articles/${article_id}`}>
+                <h3>{title}</h3>
+              </Link>
               <div className="atributes">
-              <p className="author">{author}</p>
-              <p className="topic">{topic}</p>
+                <p className="author">{author}</p>
+                <p className="topic">{topic}</p>
               </div>
               <img src={article_img_url} alt="article image" />
-              
+
               <p className="comment-count">{comment_count} comments</p>
-              <p className="created-at">{new Date(created_at).toLocaleDateString()}</p>
-            
+              <p className="created-at">
+                {new Date(created_at).toLocaleDateString()}
+              </p>
             </li>
           )
         )}
@@ -51,4 +54,3 @@ const Articles = () => {
 };
 
 export default Articles;
-
