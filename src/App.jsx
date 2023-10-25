@@ -1,9 +1,7 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
 import { Header } from "./components/Header";
-import Articles from "./components/Articles";
+import {Articles} from "./components/Articles";
 import { Routes, Route, Link } from 'react-router-dom';
-import Article from "./components/Article";
+import {Article} from "./components/Article";
 
 
 function App() {
