@@ -8,7 +8,6 @@ export const Article = () => {
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const {article_id} = useParams()
-  console.log(article_id);
   useEffect(() => {
     getArticle(article_id).then((fetchedArticle) => {
       setArticle(fetchedArticle);

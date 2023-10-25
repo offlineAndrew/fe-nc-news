@@ -22,7 +22,6 @@ export const getComments = (article_id) => {
   return axios
     .get(`https://andrii-nc-news.onrender.com/api/articles/${article_id}/comments`)
     .then((res) => {
-      console.log(res.data, "article_id");
         return res.data;
       });
 }
