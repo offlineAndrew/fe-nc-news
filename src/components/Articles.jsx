@@ -3,7 +3,7 @@ import { getArticles } from "../utils/api";
 import { Link } from 'react-router-dom';
 
 
-const Articles = () => {
+export const Articles = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -40,11 +40,12 @@ const Articles = () => {
                 <p className="topic">{topic}</p>
               </div>
               <img src={article_img_url} alt="article image" />
-
+              <div className="atributes">
               <p className="comment-count">{comment_count} comments</p>
               <p className="created-at">
                 {new Date(created_at).toLocaleDateString()}
               </p>
+              </div>
             </li>
           )
         )}
@@ -53,4 +54,3 @@ const Articles = () => {
   );
 };
 
-export default Articles;
