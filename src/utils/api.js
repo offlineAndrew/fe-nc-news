@@ -35,3 +35,14 @@ export const updateVotes = (article_id, value) => {
       return res.data.value;
     });
 };
+
+export const postComment = (article_id, comment) => {
+  return axios
+     .post(
+        `https://andrii-nc-news.onrender.com/api/articles/${article_id}/comments`,
+         comment 
+      )
+     .then((res) => {
+        return res.data;
+      });
+}

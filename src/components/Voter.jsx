@@ -16,7 +16,6 @@ export const Voter = ({ votes, id }) => {
         setErrorMsg("");
       })
       .catch((err) => {
-        console.dir(err, 'err');
         setVotesDiff((currentVotes) => {
           return currentVotes - value;
         });

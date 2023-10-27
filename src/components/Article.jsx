@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getArticle } from "../utils/api";
 import { Comments } from "../components/Comments"
 import { Voter } from "./Voter.jsx"
+import { NewComment } from "./NewComment"
 
 
 export const Article = () => {
@@ -35,6 +36,7 @@ export const Article = () => {
           <img src={article.article_img_url} alt="Article Image" />
           <Voter votes={article.votes} id={article_id}/>
           <Comments />
+          <NewComment article_id={article_id}/>
         </>
       }
     </div>
